@@ -1,0 +1,24 @@
+---
+import Tools from '../components/Tools.astro';
+import '../styles/global.css';
+---
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Extensions</title>
+	</head>
+	<body class="md:p-20 min-h-screen p-5 pt-20 bg-gradient-to-t dark:to-d-first dark:from-d-sec to-l-first from-l-sec transition-colors">
+		<Tools></Tools>
+		<slot />
+	</body>
+</html>
+
+<style>
+	
+</style>

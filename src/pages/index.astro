@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PrincipalLogo from './../assets/images/logo.svg';
+import IconMoon from './../assets/images/icon-moon.svg';
+import IconSun from './../assets/images/icon-sun.svg';
+import ExtensionsContainer from '../components/ExtensionsContainer';
+---
+
+<Layout>
+	<section class="flex flex-col items-center gap-10 justify-center max-w-6xl m-auto ">
+		<label for="" class="flex w-full justify-between items-center dark:bg-[#1f2535] bg-white ring dark:ring-0 rounded-xl ring-black/5 px-2">
+			<PrincipalLogo class="dark:text-white text-primary md:static absolute top-0 left-0 right-0 md:mt-auto m-auto mt-5"></PrincipalLogo>
+			<input id="search" class="mx-5 w-full focus:outline-none dark:text-white text-black" placeholder="Search.." type="text">
+			<button id="theme_button" class="p-3 dark:bg-white/10 bg-[#e3e7ee] rounded-xl m-2">
+				<IconSun id="sun" class="dark:text-white text-[#091540] hidden"></IconSun>
+				<IconMoon id="moon" class="dark:text-white text-[#091540]"></IconMoon>
+			</button>
+		</label>
+		<ExtensionsContainer client:only />
+	</section>
+</Layout>
+
+
+<script>
+	const sun = document.getElementById("sun")
+	const moon = document.getElementById("moon")
+	const theme_button = document.getElementById("theme_button");
+	const currentTheme = localStorage.getItem("theme") || "light";
+	if (currentTheme === "dark") {
+	  document.documentElement.classList.add("dark");
+	  moon?.classList.add("hidden")
+		sun?.classList.remove("hidden")
+	} else {
+	  document.documentElement.classList.remove("dark");
+	  sun?.classList.add("hidden")
+		moon?.classList.remove("hidden")
+	}
+  
+	theme_button?.addEventListener("click", () => {
+	  const isDarkMode = document.documentElement.classList.contains("dark");
+	  if (isDarkMode) {
+		document.documentElement.classList.remove("dark");
+		localStorage.setItem("theme", "light");
+		sun?.classList.add("hidden")
+		moon?.classList.remove("hidden")
+	  } else {
+		document.documentElement.classList.add("dark");
+		localStorage.setItem("theme", "dark");
+		moon?.classList.add("hidden")
+		sun?.classList.remove("hidden")
+	  }
+	});
+  </script>
+
+

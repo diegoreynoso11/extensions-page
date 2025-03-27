@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+  
+@theme {
+    --color-l-first : #ebf2fc;
+    --color-l-sec : #effbf9;
+    --color-d-first: #050a1d;
+    --color-d-sec : #0a1542;
+  
+    --color-primary : #2f354b;
+    --color-secondary : #515868;
+    --color-select : #f35c55;
+}
+.animate-fade-in {
+    animation: fadeIn .2s both;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    } 
+    to {
+        opacity: 1;
+        backdrop-filter: blur(5px);
+    }
+}

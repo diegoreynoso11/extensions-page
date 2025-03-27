@@ -1,0 +1,40 @@
+---
+import Toolsvg from "../assets/images/tools.svg"
+
+---
+
+<section id="section_tools" class="transition-all absolute -ml-[60px] bg-white dark:bg-primary my-5 rounded-md flex gap-4 top-0 left-0 cursor-pointer dark:text-white justify-center items-center">
+    <button class="cursor-pointer px-3 py-2 font-bold hover:tracking-widest transition-all" id="reset">Reset</button>
+    <div id="touch" class="py-2">
+        <Toolsvg id="show_arrow" class="rotate-[270deg]"></Toolsvg>
+    </div>
+</section>
+
+
+<script>
+    const section_tools = document.querySelector("#section_tools")
+    const reset = document.querySelector("#reset")
+    const show_arrow = document.querySelector("#show_arrow")
+    const touch = document.querySelector("#touch")
+    let show = false
+    touch?.addEventListener("click", () => {
+        if (show) {
+            section_tools?.classList.add("-ml-[60px]")
+            section_tools?.classList.remove("ml-2")
+            show_arrow?.classList.add("rotate-[270deg]")
+            show_arrow?.classList.remove("rotate-90")
+            show = !show
+        } else {
+            section_tools?.classList.remove("-ml-[60px]")
+            section_tools?.classList.add("ml-2")
+            show_arrow?.classList.remove("rotate-[270deg]")
+            show_arrow?.classList.add("rotate-90")
+            show = !show
+        }
+        
+    })
+    reset?.addEventListener("click", () => {
+        location.reload()
+        localStorage.clear()
+    })
+</script>
