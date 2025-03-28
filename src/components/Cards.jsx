@@ -57,7 +57,7 @@ function Cards ({ data, setData, filter }) {
                 class='gap-6 h-full w-full justify-between flex flex-col p-4 border border-gray-300/30 rounded-xl bg-white text-primary dark:bg-gray-800 dark:text-white/70'
               >
                 <div class='flex gap-3 justify-between items-center'>
-                  <RenderLogo logo={el.logo} />
+                  <RenderLogo logo={el.logo} alt={el.name} />
                   <div class='flex flex-col'>
                     <h1 class='font-bold'>{el.name}</h1>
                     <p class='w-fit md:w-md lg:w-full'>{el.description}</p>
@@ -72,6 +72,7 @@ function Cards ({ data, setData, filter }) {
                   </button>
                   <label class='relative inline-flex items-center cursor-pointer'>
                     <input
+                      title='active or inactive extension'
                       id={`switch_card-${idx}`}
                       aria-checked={el.isActive}
                       checked={el.isActive}

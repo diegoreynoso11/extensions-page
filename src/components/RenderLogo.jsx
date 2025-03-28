@@ -1,7 +1,6 @@
-const RenderLogo = ({ logo }) => {
-  // assets/images/logo-console-plus.svg 12ms
+const RenderLogo = ({ logo, alt }) => {
   return (
-    <img src={`/${logo}`} alt={logo} />
+    <img src={`/${logo}`} alt={`img with ${alt}`} />
   )
 }
 
