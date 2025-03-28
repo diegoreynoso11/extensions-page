@@ -1,10 +1,7 @@
-// RenderLogo.jsx
-
-// Importa todos los logos SVG
-
 const RenderLogo = ({ logo }) => {
+  // assets/images/logo-console-plus.svg 12ms
   return (
-    <img src={`src/${logo}`} alt={logo} />
+    <img src={`/${logo}`} alt={logo} />
   )
 }
 
