@@ -71,8 +71,8 @@ function Cards ({ data, setData, filter }) {
                     Remove
                   </button>
                   <label class='relative inline-flex items-center cursor-pointer'>
+                    <span class='sr-only'>Toggle extension active or inactive</span>
                     <input
-                      title='active or inactive extension'
                       id={`switch_card-${idx}`}
                       aria-checked={el.isActive}
                       checked={el.isActive}
