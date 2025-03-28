@@ -30,6 +30,7 @@ function Cards ({ data, setData, filter }) {
   }, [data, filter])
   return (
     <>
+
       {modalOpen && (
         <div onClick={() => setModal(false)} class='fixed inset-0 h-screen m-auto flex justify-center items-center dark:bg-primary/50 z-50 bg-black/30 animate-fade-in'>
           <div onClick={(e) => e.stopPropagation()} class='bg-white ring ring-primary/30 dark:ring-white/30 dark:bg-primary gap-10 dark:text-white rounded-lg p-10 flex flex-col justify-center items-center'>
@@ -53,7 +54,7 @@ function Cards ({ data, setData, filter }) {
             filteredData.map((el, idx) => (
               <div
                 key={idx}
-                class='gap-6 h-full w-full justify-between flex flex-col p-4 border border-gray-300/30 rounded-xl bg-white text-primary  dark:bg-gray-800 dark:text-white/70'
+                class='gap-6 h-full w-full justify-between flex flex-col p-4 border border-gray-300/30 rounded-xl bg-white text-primary dark:bg-gray-800 dark:text-white/70'
               >
                 <div class='flex gap-3 justify-between items-center'>
                   <RenderLogo logo={el.logo} />
@@ -86,8 +87,8 @@ function Cards ({ data, setData, filter }) {
             ))
           )
         : (
-          <p class='text-center text-4xl font-bold m-auto'>
-            No tienes extensiones agregadas
+          <p class='dark:text-white text-primary text-center text-4xl font-bold m-auto col-start-2 row-start-1'>
+            You don't have extensions
           </p>
           )}
     </>
